@@ -1,0 +1,53 @@
+<div class="modal fade" id="modal-gestion-usuario" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modal-usuario-titulo"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="form-gestion-usuario" onsubmit="return false;">
+            <input type="hidden" id="usuario-edit-id">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                <label for="usuario-nombre-completo" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="usuario-nombre-completo" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                <label for="usuario-username" class="form-label">Nombre de Usuario (Login)</label>
+                <input type="text" class="form-control" id="usuario-username" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="usuario-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="usuario-email" required>
+            </div>
+            <div class="mb-3">
+                <label for="usuario-password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="usuario-password" placeholder="Dejar en blanco para no cambiar">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                <label for="usuario-rol" class="form-label">Rol</label>
+                <select class="form-select" id="usuario-rol" required></select>
+                </div>
+                <div class="col-md-6 mb-3">
+                <label for="usuario-contratista" class="form-label">Contratista Asociado</label>
+                <select class="form-select" id="usuario-contratista"></select>
+                <small class="form-text text-muted">Solo si el rol es "Contratista".</small>
+                </div>
+            </div>
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="usuario-estado" checked>
+                <label class="form-check-label" for="usuario-estado">Usuario Activo</label>
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="btn-guardar-usuario">Guardar Cambios</button>
+        </div>
+        </div>
+    </div>
+</div>

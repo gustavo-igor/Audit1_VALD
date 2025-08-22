@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Matriz de Riesgos y Oportunidades</h5>
+        <button class="btn btn-primary" id="btn-abrir-modal-riesgo">
+            <i class="bi bi-plus-circle me-2"></i>Añadir Riesgo/Oportunidad
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <!-- <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Clasificación</th>
+                        <th>Descripción del Riesgo / Oportunidad</th>
+                        <th>Comentario</th>
+                        <th>Proceso</th>
+                        <th>Prob.</th>
+                        <th>Impacto</th>
+                        <th>P x I</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                        <th>Responsable</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-matriz-riesgo-body">
+                </tbody>
+            </table> -->
+            <table class="table table-hover table-sm">
+                <thead>
+                    <tr id="tabla-riesgos-headers">
+                        <th data-sort="id_riesgo" class="sortable">ID ⇅</th>
+                        <th data-sort="clasificacion" class="sortable">Clasificación ⇅</th>
+                        <th data-sort="descripcion_riesgo" class="sortable">Descripción ⇅</th>
+                        <th data-sort="comentario_descripcion" class="sortable">Comentario ⇅</th>
+                        <th data-sort="proceso" class="sortable">Proceso ⇅</th>
+                        <th data-sort="probabilidad" class="sortable">Prob. ⇅</th>
+                        <th data-sort="impacto" class="sortable">Imp. ⇅</th>
+                        <th data-sort="pxi" class="sortable">PxI ⇅</th>
+                        <th data-sort="categoria" class="sortable">Categoría ⇅</th>
+                        <th data-sort="acciones_mitigacion" class="sortable">Acciones ⇅</th>
+                        <th data-sort="responsable_nombre" class="sortable">Responsable ⇅</th>
+                        <th data-sort="estado" class="sortable">Estado ⇅</th>
+                        <th>Acciones</th>
+                    </tr>
+                    <tr id="tabla-riesgos-filters">
+                        <th><input type="text" class="form-control form-control-sm" data-filter="id_riesgo"></th>
+                        <th><input type="text" class="form-control form-control-sm" data-filter="clasificacion"></th>
+                        <th><input type="text" class="form-control form-control-sm" data-filter="descripcion_riesgo"></th>
+                        <th><input type="text" class="form-control form-control-sm" data-filter="comentario_descripcion"></th>
+                        <th><input type="text" class="form-control form-control-sm" data-filter="proceso"></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th><input type="text" class="form-control form-control-sm" data-filter="acciones_mitigacion"></th>
+                        <th><input type="text" class="form-control form-control-sm" data-filter="responsable_nombre"></th>
+                        <th><input type="text" class="form-control form-control-sm" data-filter="estado"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-matriz-riesgo-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>

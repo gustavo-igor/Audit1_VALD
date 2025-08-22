@@ -1,0 +1,69 @@
+<div id="vista-detalle-proyecto" style="display: none;">
+    <!-- Encabezado del Proyecto -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="mb-0">Detalles del Proyecto: <span id="detalle-titulo-sap" class="text-primary"></span></h2>
+            <p class="text-muted mb-0" id="detalle-descripcion-subtitulo" style="font-size: 1.1rem;"></p>
+        </div>
+        <button class="btn btn-outline-secondary" id="btn-volver-desde-detalle">
+            <i class="bi bi-arrow-left me-2"></i>Volver al Listado
+        </button>
+    </div>
+    
+    <!-- Pestañas de Navegación -->
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab">Dashboard</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-general-tab" data-bs-toggle="pill" data-bs-target="#pills-general" type="button" role="tab">General</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-tareas-tab" data-bs-toggle="pill" data-bs-target="#pills-tareas" type="button" role="tab">Tareas</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-gantt-tab" data-bs-toggle="pill" data-bs-target="#pills-gantt" type="button" role="tab">Gantt</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-matriz-riesgo-tab" data-bs-toggle="pill" data-bs-target="#pills-matriz-riesgo" type="button" role="tab">Matriz de Riesgo</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab">Documentos</button>
+        </li>
+        <li class="nav-item" role="presentation" id="li-beneficiario-tab" style="display: none;">
+            <button class="nav-link" id="pills-beneficiario-tab" data-bs-toggle="pill" data-bs-target="#pills-beneficiario" type="button" role="tab">Beneficiario</button>
+        </li>
+    </ul>
+
+    <!-- Contenedores para el Contenido de las Pestañas -->
+    <div class="tab-content" id="pills-tabContent">
+            
+            <div class="tab-pane fade" id="pills-dashboard" role="tabpanel">
+                {% include 'PARTIALS/vista_detalle_proyecto_dashboard.html' %}
+            </div>
+            
+            <div class="tab-pane fade show active" id="pills-general" role="tabpanel">
+                {% include 'PARTIALS/vista_detalle_proyecto_general.html' %}
+            </div>
+
+            <div class="tab-pane fade" id="pills-tareas" role="tabpanel">
+                {% include 'PARTIALS/vista_detalle_proyecto_tareas.html' %}
+            </div>
+
+            <div class="tab-pane fade" id="pills-gantt" role="tabpanel">
+                {% include 'PARTIALS/vista_detalle_proyecto_gantt.html' %}
+            </div>
+
+            <div class="tab-pane fade" id="pills-matriz-riesgo" role="tabpanel">
+                {% include 'PARTIALS/tab_vista_detalle_proyecto_matrizriesgo.html' %}
+            </div>
+            
+            <div class="tab-pane fade" id="pills-documentos" role="tabpanel">
+                {% include 'PARTIALS/vista_detalle_proyecto_documentos.html' %}
+            </div>
+            
+            <div class="tab-pane fade" id="pills-beneficiario" role="tabpanel">
+                {% include 'PARTIALS/vista_detalle_proyecto_beneficiario.html' %}
+            </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="tab-pane fade" id="dashboard-pane" role="tabpanel" aria-labelledby="dashboard-tab">
+    <h2 class="mb-4">Dashboard General</h2>
+        {% include 'PARTIALS/tab_dashboard_tarjetas.html' %}
+
+    <div id="charts-grid" class="grid-stack">
+
+        <div class="grid-stack-item" gs-w="12" gs-h="5">
+            {% include 'PARTIALS/tab_dashboard_financiero_general.html' %}
+        </div>
+
+        <div class="grid-stack-item" gs-w="6" gs-h="5">
+            {% include 'PARTIALS/tab_dashboard_fisico_general.html' %}
+        </div>
+
+        <div class="grid-stack-item" gs-w="6" gs-h="5">
+            <div class="grid-stack-item-content">
+                 <div class="d-flex justify-content-between align-items-center ps-3 pt-2 pe-3">
+                    <h5 class="text-muted mb-0">Cantidad (Q) de Proyectos en PES</h5>
+                     </div>
+                <div style="position: relative; height: 85%;">
+                    <canvas id="chartCantidadPES"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

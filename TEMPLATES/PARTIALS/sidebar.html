@@ -1,0 +1,67 @@
+<nav id="sidebar" class="p-3">
+    <div class="sidebar-header mb-4 text-center">
+        <h4><i class="bi bi-layers-fill"></i> Módulos</h4>
+    </div>
+    
+    <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+        
+        {% if 'dashboard' in user_permisos %}
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="dashboard-tab" data-bs-toggle="pill" href="#dashboard-pane" role="tab" aria-controls="dashboard-pane" aria-selected="true">
+                <i class="bi bi-grid-1x2-fill me-2"></i> Dashboard
+            </a>
+        </li>
+        {% endif %}
+
+        {% if 'calendario' in user_permisos %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="calendario-tab" data-bs-toggle="pill" data-bs-target="#calendario-tab-pane" ...>
+                <i class="bi bi-calendar-event-fill"></i> Calendario
+            </button>
+        </li>
+        {% endif %}
+        
+        {% if 'proyectos' in user_permisos %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="proyectos-tab" data-bs-toggle="pill" data-bs-target="#proyectos-tab-pane" type="button" role="tab" aria-controls="proyectos-tab-pane" aria-selected="true">
+                <i class="bi bi-table"></i> Proyectos
+            </button>
+        </li>
+        {% endif %}
+
+        {% if 'kanban' in user_permisos %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="kanban-tab" data-bs-toggle="pill" data-bs-target="#kanban-tab-pane" type="button" role="tab" aria-controls="kanban-tab-pane" aria-selected="false">
+                <i class="bi bi-kanban-fill"></i> Kanban
+            </button>
+        </li>
+        {% endif %}
+
+
+        {% if 'rpa' in user_permisos %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="rpa-tab" data-bs-toggle="pill" data-bs-target="#rpa-tab-pane" type="button" role="tab" aria-controls="rpa-tab-pane" aria-selected="false">
+                <i class="bi bi-play-circle-fill"></i> RPA
+            </button>
+        </li>
+        {% endif %}
+
+
+        {% if 'mapa' in user_permisos %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="mapa-tab" data-bs-toggle="pill" data-bs-target="#mapa-tab-pane" type="button" role="tab" aria-controls="mapa-tab-pane" aria-selected="false">
+                <i class="bi bi-map-fill"></i> Mapa
+            </button>
+        </li>
+        {% endif %}
+
+        {% if 'tablas' in user_permisos %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tablas-tab" data-bs-toggle="pill" data-bs-target="#tablas-tab-pane" type="button" role="tab" aria-controls="tablas-tab-pane" aria-selected="false">
+                <i class="bi bi-database-gear"></i> Tablas
+            </button>
+        </li>
+        {% endif %}
+
+    </ul>
+</nav>

@@ -1,0 +1,150 @@
+
+<div class="modal fade" id="modalTarea" tabindex="-1" aria-labelledby="modalTareaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title d-flex align-items-center" id="modalTareaLabel">
+                    <i class="bi bi-card-checklist me-2"></i>
+                    <span id="modal-tarea-nombre">Nueva Tarea</span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTarea" novalidate onsubmit="return false;">
+                    <input type="hidden" id="id_tarea">
+                    <div class="row">
+
+                        <!-- Columna Principal (Izquierda) -->
+                        <div class="col-lg-8">
+                            <div class="mb-3">
+                                <label for="nombre_tarea_input" class="form-label fw-bold"><i class="bi bi-fonts me-2"></i>Nombre de la Tarea</label>
+                                <input type="text" class="form-control form-control-lg" id="nombre_tarea_input" required>
+                            </div>
+
+                            <div class="mb-3" id="proyecto_sap_select_container" style="display: none;">
+                                <label for="proyecto_sap_select" class="form-label fw-bold">Asignar SAP (*)</label>
+                                <select id="proyecto_sap_select" class="form-select" required></select>
+                                <div class="form-text">Este campo solo aparece al crear tareas desde el Kanban global.</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="descripcion_tarea" class="form-label fw-bold"><i class="bi bi-pencil-square me-2"></i>Descripción / Nota</label>
+                                <textarea class="form-control" id="descripcion_tarea" rows="4" placeholder="Añade una descripción más detallada..."></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-bold"><i class="bi bi-paperclip me-2"></i>Adjuntos</label>
+                                <div id="attachment-dropzone" class="dropzone dz-clickable">
+                                    <div class="dz-message text-center text-muted">
+                                        <i class="bi bi-cloud-arrow-up-fill fs-3"></i><br>
+                                        Arrastra archivos aquí o haz clic para subir.
+                                    </div>
+                                </div>
+                                <ul class="list-group list-group-flush mt-2" id="attachment-list">
+                                    <!-- Archivos adjuntos existentes se listarán aquí -->
+                                </ul>
+                            </div>
+
+                            <!-- MISIÓN 3: Lista de Comprobación (Subtareas) -->
+                            <div class="mb-4">
+                                <label class="form-label fw-bold"><i class="bi bi-check2-square me-2"></i>Lista de Comprobación (Subtareas)</label>
+                                <div class="progress mb-2" style="height: 10px;">
+                                    <div id="checklist-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div id="checklist-container" class="list-group list-group-flush">
+                                    <!-- Las subtareas se insertarán aquí dinámicamente -->
+                                </div>
+                                <div class="input-group mt-2" id="checklist-add-item-group">
+                                    <input type="text" id="input-nueva-subtarea" class="form-control" placeholder="Añadir un elemento...">
+                                    <button class="btn btn-outline-secondary" type="button" id="btn-add-subtarea">Añadir</button>
+                                </div>
+                            </div>
+                            <!-- Fin Misión 3 -->
+
+                            <div>
+                                <label class="form-label fw-bold"><i class="bi bi-chat-left-text-fill me-2"></i>Actividad y Comentarios</label>
+                                <div class="input-group">
+                                    <input type="text" id="input-nuevo-comentario" class="form-control" placeholder="Escribe un comentario...">
+                                    <button class="btn btn-primary" type="button" id="btn-add-comentario">Guardar</button>
+                                </div>
+                                <div id="comments-container" class="mt-3">
+                                    <!-- Los comentarios se insertarán aquí -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Lateral (Derecha) -->
+                        <div class="col-lg-4">
+                            <!-- MISIÓN 1: Responsables -->
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h6 class="card-title">Responsables</h6>
+                                    <div class="mb-2">
+                                        <label for="coordinador_tarea" class="form-label fw-bold"><small>Coordinador</small></label>
+                                        <select class="form-select form-select-sm" id="coordinador_tarea">
+                                            <!-- Opciones de coordinadores se cargarán aquí -->
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="contratista_tarea" class="form-label fw-bold"><small>Contratista</small></label>
+                                        <select class="form-select form-select-sm" id="contratista_tarea">
+                                             <!-- Opciones de contratistas se cargarán aquí -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fin Misión 1 -->
+                            
+                            <!-- MISIÓN 2: Etiquetas -->
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h6 class="card-title mb-0">Etiquetas</h6>
+                                        <button type="button" class="btn btn-light btn-sm" data-bs-toggle="collapse" data-bs-target="#etiquetas-popover">
+                                            <i class="bi bi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="collapse" id="etiquetas-popover">
+                                        <div class="card card-body p-2 mt-2">
+                                            <div id="etiquetas-disponibles" class="d-flex flex-wrap gap-1">
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div id="labels-container" class="mt-2 d-flex flex-wrap gap-1">
+                                        </div>
+                                </div>
+                            </div>
+                            <!-- Fin Misión 2 -->
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Propiedades</h6>
+                                    <div class="mb-2"><label for="estado_tarea" class="form-label fw-bold"><small>Estado</small></label><select class="form-select form-select-sm" id="estado_tarea"><option value="Pendiente">Pendiente</option><option value="En Proceso">En Proceso</option><option value="En Revisión">En Revisión</option><option value="Completada">Completada</option></select></div>
+                                    <div class="mb-2"><label for="prioridad_tarea" class="form-label fw-bold"><small>Prioridad</small></label><select class="form-select form-select-sm" id="prioridad_tarea"><option value="Baja">Baja</option><option value="Media" selected>Media</option><option value="Alta">Alta</option></select></div>
+                                    <div class="mb-2"><label class="form-label fw-bold"><small>Fecha Creación</small></label><p class="form-control-plaintext ps-1 py-0" id="detalle-tarea-fecha-creacion"></p></div>
+                                    <div class="mb-0"><label for="vencimiento_tarea" class="form-label fw-bold"><small>Fecha Vencimiento</small></label><input type="date" class="form-control form-control-sm" id="vencimiento_tarea"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- MISIÓN 3: Adjuntos Drag and Drop -->
+                            
+                            <!-- Fin Misión 3 -->
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-danger" id="btn-eliminar-tarea">
+                    <i class="bi bi-trash me-2"></i>
+                    Eliminar Tarea
+                </button>
+
+                <div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnGuardarTarea">Guardar Tarea</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

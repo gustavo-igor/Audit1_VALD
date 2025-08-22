@@ -1,0 +1,27 @@
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Autenticación Requerida</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Se requiere autenticación para los módulos del panel.</p>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="inputCorreo" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="inputCorreo" required autocomplete="username">>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputContraseña" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="inputContraseña" required autocomplete="current-password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" id="confirmarLoginBtn" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="tab-pane fade" id="rpa-tab-pane" role="tabpanel" aria-labelledby="rpa-tab">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Panel de Obras - Valdivia</h2>
+    </div>
+    <form id="formPaso1" class="row g-3">
+        <div class="col-md-8">
+            <textarea id="inputText" class="form-control" rows="4" placeholder="Ej: 200/AV-222..."></textarea>
+            <fieldset class="border p-3 mt-3 rounded">
+                <legend class="float-none w-auto px-2 h6">Módulos SAP</legend>
+                <div class="d-flex justify-content-around">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkNorma" value="norma_liquidacion">
+                        <label class="form-check-label" for="checkNorma">Norma Liquidación</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkCpresupuesto" value="presupuesto">
+                        <label class="form-check-label" for="checkCpresupuesto">C. Presupuesto</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkcambionombre" value="cambio_nombre">
+                        <label class="form-check-label" for="checkcambionombre">Cambio Nombre</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkprograma" value="programa">
+                        <label class="form-check-label" for="checkprograma">Programa Inversión</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkclaseproyecto" value="clase_proyecto">
+                        <label class="form-check-label" for="checkclaseproyecto">Clase proyecto</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkzonal" value="zonal">
+                        <label class="form-check-label" for="checkzonal">Solicitante (Zonal)</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="border p-3 mt-3 rounded">
+                <legend class="float-none w-auto px-2 h6">Módulos Panel</legend>
+                <div class="d-flex justify-content-around">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkvaloriza" value="valoriza">
+                        <label class="form-check-label" for="checkvaloriza">Valoriza</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkcambionombrePanel" value="cambio_nombre">
+                        <label class="form-check-label" for="checkcambionombrePanel">No habilitado</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkprogramaPanel" value="programa">
+                        <label class="form-check-label" for="checkprogramaPanel">No habilitado</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-md-4 d-grid">
+            <button type="submit" class="btn btn-primary h-100">Ejecutar</button>
+        </div>
+    </form>
+    <div class="mt-4">
+        <h4>Progreso:</h4>
+        <ul id="status-list" class="list-group"></ul>
+    </div>
+</div>

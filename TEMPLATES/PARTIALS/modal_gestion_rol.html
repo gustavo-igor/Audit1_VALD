@@ -1,0 +1,24 @@
+<div class="modal fade" id="modal-gestion-rol" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modal-rol-titulo">Editar Permisos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="form-gestion-rol" onsubmit="return false;">
+            <input type="hidden" id="rol-edit-id">
+            <p><strong>Rol:</strong> <span id="rol-nombre-display" class="fw-bold"></span></p>
+            <hr>
+            <p>Seleccione los módulos permitidos para este rol:</p>
+            <div id="rol-permisos-container">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="btn-guardar-rol">Guardar Permisos</button>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<!-- ARCHIVO: templates/template_tab_general.html -->
+<!-- Contenido para la pestaña de Información General del Proyecto -->
+
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="bi bi-info-circle-fill me-2"></i>Información General</h5>
+                    <button class="btn btn-outline-primary btn-sm" id="btn-editar-general" title="Editar Información">
+                        <i class="bi bi-pencil-fill"></i> Editar
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <strong>Unidad:</strong>
+                            <span class="display-field" id="detalle-unidad"></span>
+                            <select class="form-select form-select-sm edit-field d-none" id="input-detalle-unidad"></select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>Línea de Negocio:</strong>
+                            <span class="display-field" id="detalle-linea-negocio"></span>
+                            <select class="form-select form-select-sm edit-field d-none" id="input-detalle-linea-negocio"></select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>Valoriza:</strong>
+                            <span class="display-field" id="detalle-valoriza"></span>
+                            <input type="number" class="form-control form-control-sm edit-field d-none" id="input-detalle-valoriza">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>Programa de Inversión:</strong>
+                            <span class="display-field" id="detalle-programa-inversion"></span>
+                            <input type="text" class="form-control form-control-sm edit-field d-none" id="input-detalle-programa-inversion">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>ID:</strong>
+                            <span class="display-field" id="detalle-id"></span>
+                            <input type="text" class="form-control form-control-sm edit-field d-none" id="input-detalle-id">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>ID Posición:</strong>
+                            <span class="display-field" id="detalle-id-posicion"></span>
+                            <input type="text" class="form-control form-control-sm edit-field d-none" id="input-detalle-id-posicion">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>Tipo de Inversión:</strong>
+                            <span class="display-field" id="detalle-tipo-inversion"></span>
+                            <select class="form-select form-select-sm edit-field d-none" id="input-detalle-tipo-inversion"></select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>Coordinador:</strong>
+                            <span class="display-field" id="detalle-coordinador"></span>
+                            <select class="form-select form-select-sm edit-field d-none" id="input-detalle-coordinador"></select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>Contratista:</strong>
+                            <span class="display-field" id="detalle-contratista"></span>
+                            <select class="form-select form-select-sm edit-field d-none" id="input-detalle-contratista"></select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong>Estado:</strong>
+                            <span class="display-field" id="detalle-estado"></span>
+                            <select class="form-select form-select-sm edit-field d-none" id="input-detalle-estado"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-end d-none" id="footer-edicion-general">
+                    <button class="btn btn-secondary btn-sm" id="btn-cancelar-general">Cancelar</button>
+                    <button class="btn btn-success btn-sm" id="btn-guardar-general">
+                        <i class="bi bi-check-circle me-1"></i> Guardar Cambios
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card mb-4">
+                <div class="card-header"><h5 class="mb-0"><i class="bi bi-geo-alt-fill me-2"></i>Ubicación</h5></div>
+                <div class="card-body">
+                    <p><strong>Comuna:</strong> <span id="detalle-comuna"></span></p>
+                    <div id="detalle-mapa-container">
+                        <div id="detalle-mapa" style="height: 200px; background-color: #f0f0f0;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h5 class="mb-0"><i class="bi bi-person-badge-fill me-2"></i>Cliente</h5></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12"><p><strong>Nombre:</strong> <span id="detalle-cliente-nombre"></span></p></div>
+                        <div class="col-md-6"><p><strong>Correo:</strong> <span id="detalle-cliente-correo"></span></p></div>
+                        <div class="col-md-6"><p><strong>Fono:</strong> <span id="detalle-cliente-fono"></span></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

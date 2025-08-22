@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>RPA - Panel Obras Valdivia</title>
+
+<!-- Estilos locales y globales -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='beneficiario.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Leaflet y extensiones -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-search@3.0.9/dist/leaflet-search.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+
+<!-- Select2 y datatables -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css" />
+
+<!-- FullCalendar (solo estilos, ya no scripts globales) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.17/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.17/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.17/main.css" />
+
+<!-- Gantt -->
+<link rel="stylesheet" href="{{ url_for('static', filename='libs/dhtmlxGantt/codebase/dhtmlxgantt.css') }}">
+
+<!-- Graficos -->
+<link href="https://cdn.jsdelivr.net/npm/gridstack@9.2.1/dist/gridstack.min.css" rel="stylesheet"/>
+
+
+<!-- Editor de texto enrequecido -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+<link href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+
+<!-- Import Maps para módulos ES6 -->
+<script type="importmap">
+{
+  "imports": {
+    "@fullcalendar/core": "https://cdn.skypack.dev/@fullcalendar/core@6.1.17",
+    "@fullcalendar/daygrid": "https://cdn.skypack.dev/@fullcalendar/daygrid@6.1.17",
+    "@fullcalendar/timegrid": "https://cdn.skypack.dev/@fullcalendar/timegrid@6.1.17",
+    "@fullcalendar/interaction": "https://cdn.skypack.dev/@fullcalendar/interaction@6.1.17",
+    "@fullcalendar/list": "https://cdn.skypack.dev/@fullcalendar/list@6.1.17"
+  }
+}
+</script>
+
+</head>
+<body>
+
+{% include 'PARTIALS/header.html' %}
+
+<div class="wrapper">
+    {% include 'PARTIALS/sidebar.html' %}
+    <div id="main-content">
+        <div class="tab-content" id="myTabContent">
+
+            {% include 'PARTIALS/tab_dashboard.html' %}
+            {% include 'PARTIALS/tab_calendario.html' %}
+            {% include 'PARTIALS/tab_proyectos.html' %}
+            {% include 'PARTIALS/tab_kanban.html' %}
+            {% include 'PARTIALS/tab_rpa.html' %}
+            {% include 'PARTIALS/tab_mapa.html' %}
+            {% include 'PARTIALS/tab_tablas.html' %} 
+        </div>
+    {% include 'PARTIALS/vista_detalle_proyecto.html' %}
+    </div>
+</div>
+
+{% include 'PARTIALS/modal_login.html' %}
+{% include 'PARTIALS/modal_proyecto_tarea.html' %}
+{% include 'PARTIALS/modal_evento_calendario.html' %}
+{% include 'PARTIALS/modal_drag_drop_calendario.html' %}
+{% include 'PARTIALS/modal_matrizriesgo.html' %}
+{% include 'PARTIALS/modal_tablas.html' %}
+{% include 'PARTIALS/modal_gestion_usuario.html' %}
+{% include 'PARTIALS/modal_gestion_rol.html' %}
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+
+<!-- Leaflet y herramientas -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/leaflet-search@3.0.9/dist/leaflet-search.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-rainviewer/leaflet-rainviewer.js"></script>
+
+
+
+<!-- editor de texto -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+<!-- Otros -->
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script src="https://unpkg.com/split.js/dist/split.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<!-- Gantt -->
+<script src="{{ url_for('static', filename='libs/dhtmlxGantt/codebase/dhtmlxgantt.js') }}"></script>
+
+<!-- Documentos -->
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
+<!-- Graficos -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gridstack@9.2.1/dist/gridstack-all.js"></script>
+
+<!-- Módulo principal -->
+<script type="module" src="{{ url_for('static', filename='main.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='calendario.js') }}"></script>
+
+</body>
+</html>

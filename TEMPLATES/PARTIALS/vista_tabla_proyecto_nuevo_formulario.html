@@ -1,0 +1,86 @@
+<div class="form-container-nuevo-proyecto pt-3">
+    <form id="form-nuevo-proyecto" novalidate>
+        
+        <div class="card mb-3">
+            <div class="card-header fw-bold">1. Información Principal del Proyecto</div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="nuevo-sap" class="form-label">SAP <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="nuevo-sap"
+                                placeholder="Ej: 000/XX-000" 
+                                pattern="\d{3}/[A-Z]{2}-\d{3,}(?:-\d+)*" 
+                                maxlength="20" required>
+                            <span class="input-group-text" id="sap-validation-icon"></span>
+                        </div>
+                        <div class="invalid-feedback" id="sap-error-message">
+                            Formato incorrecto. Ej: 000/XX-000 o 000/XX-000-1.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="nuevo-valoriza" class="form-label">Valoriza <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="nuevo-valoriza" placeholder="Solo números" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="nuevo-wf-scm" class="form-label">WF SCM</label>
+                        <input type="text" class="form-control" id="nuevo-wf-scm">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="nuevo-wf" class="form-label">WF</label>
+                        <input type="text" class="form-control" id="nuevo-wf">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="nuevo-descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="nuevo-descripcion" rows="2"></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-estado" class="form-label">Estado <span class="text-danger">*</span></label>
+                        <select class="form-select" id="nuevo-estado" required></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-coordinador" class="form-label">Coordinador</label>
+                        <select class="form-select" id="nuevo-coordinador"></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-contratista" class="form-label">Contratista</label>
+                        <select class="form-select" id="nuevo-contratista"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header fw-bold">2. Información Técnica y Geográfica</div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="nuevo-unidad" class="form-label">Unidad <span class="text-danger">*</span></label>
+                        <select class="form-select" id="nuevo-unidad" required></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-linea-negocio" class="form-label">Línea de Negocio <span class="text-danger">*</span></label>
+                        <select class="form-select" id="nuevo-linea-negocio" required></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-tipo-inversion" class="form-label">Tipo Inversión</label>
+                        <select class="form-select" id="nuevo-tipo-inversion"></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-comuna" class="form-label">Comuna</label>
+                        <select class="form-select" id="nuevo-comuna"></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-sector" class="form-label">Sector Urbano o Rural</label>
+                        <select class="form-select" id="nuevo-sector"></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="nuevo-segmento-obra" class="form-label">Segmento Modelo Obra Menor</label>
+                        <select class="form-select" id="nuevo-segmento-obra"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

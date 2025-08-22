@@ -1,0 +1,46 @@
+<div id="vista-nuevo-proyecto" style="display: none;">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0"><i class="bi bi-pencil-square me-2"></i>Área de Creación de Proyectos</h2>
+        <button type="button" class="btn btn-outline-secondary" id="btn-volver-desde-nuevo">
+            <i class="bi bi-arrow-left-circle me-2"></i>Volver a la tabla
+        </button>
+    </div>
+
+    <ul class="nav nav-tabs" id="nuevo-proyecto-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab-formulario-creacion" data-bs-toggle="tab" data-bs-target="#panel-formulario" type="button" role="tab">
+                <i class="bi bi-file-earmark-plus me-2"></i>Formulario
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-borradores" data-bs-toggle="tab" data-bs-target="#panel-borradores" type="button" role="tab">
+                <i class="bi bi-journal-bookmark-fill me-2"></i>Borradores
+                <span class="badge rounded-pill bg-primary ms-1" id="contador-borradores">0</span>
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="nuevo-proyecto-tab-content">
+
+        <div class="tab-pane fade show active" id="panel-formulario" role="tabpanel">
+            {% include 'PARTIALS/vista_tabla_proyecto_nuevo_formulario.html' %}
+        </div>
+
+        <div class="tab-pane fade" id="panel-borradores" role="tabpanel">
+             {% include 'PARTIALS/vista_tabla_proyecto_nuevo_borrador.html' %}
+        </div>
+        
+    </div>
+
+    <div class="form-footer-nuevo-proyecto" id="footer-formulario">
+        <button type="button" class="btn btn-secondary" id="btn-cancelar-nuevo">
+            <i class="bi bi-x-circle me-2"></i>Cancelar
+        </button>
+        <button type="button" class="btn btn-success" id="btn-guardar-nuevo">
+            <span class="btn-text-guardar"><i class="bi bi-check-circle me-2"></i>Guardar Borrador</span>
+            <span class="btn-text-confirmar" style="display:none;"><i class="bi bi-check-circle-fill me-2"></i>Confirmar y Guardar Proyecto</span>
+        </button>
+    </div>
+
+</div>

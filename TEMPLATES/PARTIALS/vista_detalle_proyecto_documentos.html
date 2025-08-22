@@ -1,0 +1,45 @@
+<div id="document-splitter" class="d-flex" style="height: 80vh;">
+
+    <div id="upload-pane" class="p-2 overflow-auto">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Subir y Comentar Documentos</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div class="dropzone mb-3" id="documentos-dropzone">
+                    <div class="dz-message text-center text-muted">
+                        <i class="bi bi-file-earmark-arrow-up-fill fs-1"></i>
+                        <p class="mb-0 mt-2">Arrastra los archivos aquí o haz clic.</p>
+                    </div>
+
+                </div>
+                <div class="mt-auto">
+                    <label for="documento-comentario" class="form-label fw-bold">Nota / Comentario</label>
+                    <textarea id="documento-comentario" placeholder="Añade un comentario para los archivos que vas a subir..."></textarea>
+                    <div id="upload-status-message" class="mt-2"></div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button type="button" id="btn-subir-documentos" class="btn btn-primary">
+                    <i class="bi bi-upload me-2"></i>Subir Archivos
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="list-pane" class="p-2 overflow-auto">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="bi bi-collection-fill me-2"></i>Documentos del Proyecto</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush" id="document-list">
+                    <div id="document-list-placeholder" class="text-center text-muted p-5">
+                        <p><i class="bi bi-folder-x fs-1"></i></p><p>No hay documentos para este proyecto.</p>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

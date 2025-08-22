@@ -1,0 +1,19 @@
+{
+  "employees": [
+    {
+      "employee": "abdiel",
+      "usuario": "abdiel.reyes@saesa.cl",
+      "clave": "AR$2025$airb"
+    },
+    {
+      "employee": "neli",
+      "usuario": "neli",
+      "clave": "neli"
+    },
+    {
+      "employee": "marcela",
+      "usuario": "marcela",
+      "clave": "marcela"
+    }
+  ]
+}

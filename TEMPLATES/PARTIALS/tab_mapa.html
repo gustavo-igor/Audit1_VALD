@@ -1,0 +1,95 @@
+<div class="tab-pane fade" id="mapa-tab-pane" role="tabpanel" aria-labelledby="mapa-tab">
+    <div class="map-page-wrapper">
+        <div id="map-container"></div>
+        <div id="layer-panel" class="map-sidebar">
+            <div class="card h-100">
+                <div class="card-header">
+                    <strong><i class="bi bi-layers-fill me-2"></i>Control de Capas</strong>
+                </div>
+                <div class="card-body overflow-auto p-0">
+                    <div class="accordion accordion-flush" id="layerAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBaseLayers">Capas Base</button>
+                            </h2>
+                            <div id="collapseBaseLayers" class="accordion-collapse collapse" data-bs-parent="#layerAccordion">
+                                <div class="accordion-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="baseLayer" id="radioGoogle" value="google" checked>
+                                        <label class="form-check-label" for="radioGoogle">Google Maps</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="baseLayer" id="radioSatellite" value="satellite">
+                                        <label class="form-check-label" for="radioSatellite">Google Satellite</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="baseLayer" id="radioOsm" value="osm">
+                                        <label class="form-check-label" for="radioOsm">OpenStreetMap</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataView">Vista de Proyectos</button>
+                            </h2>
+                            <div id="collapseDataView" class="accordion-collapse collapse" data-bs-parent="#layerAccordion">
+                                <div class="accordion-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="dataView" id="radioCluster" value="cluster" checked>
+                                        <label class="form-check-label" for="radioCluster">Vista Agrupada (Cluster)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="dataView" id="radioIndividual" value="individual">
+                                        <label class="form-check-label" for="radioIndividual">Vista Individual (Color)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOverlays">Capas Superpuestas</button>
+                            </h2>
+                            <div id="collapseOverlays" class="accordion-collapse collapse show" data-bs-parent="#layerAccordion">
+                                <div class="accordion-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkLineaBT">
+                                        <label class="form-check-label" for="checkLineaBT">Distribución BT</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkLineaMT">
+                                        <label class="form-check-label" for="checkLineaMT">Distribución MT</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingCategories">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
+                                    Estado Proyecto
+                                </button>
+                            </h2>
+                            <div id="collapseCategories" class="accordion-collapse collapse" aria-labelledby="headingCategories" data-bs-parent="#layerAccordion">
+                                <div class="accordion-body" id="category-filter-container">
+                                    <div class="text-center text-muted small">Cargando categorías...</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseContractors">
+                                    Contratista
+                                </button>
+                            </h2>
+                            <div id="collapseContractors" class="accordion-collapse collapse" data-bs-parent="#layerAccordion">
+                                <div class="accordion-body" id="contractor-filter-container">
+                                    <div class="text-center text-muted small">Cargando contratistas...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

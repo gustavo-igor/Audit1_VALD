@@ -1,0 +1,42 @@
+<div class="modal fade" id="reprogramarModal" tabindex="-1" aria-labelledby="reprogramarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reprogramarModalLabel">Confirmar Reprogramación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Estás a punto de cambiar la fecha del evento. Por favor, justifica el motivo de la reprogramación.</p>
+                
+                <form id="reprogramarForm">
+                    <input type="hidden" id="reprogramarEventoId">
+                    <input type="hidden" id="reprogramarNuevaFechaInicio">
+                    <input type="hidden" id="reprogramarNuevaFechaFin">
+
+                    <div class="mb-3">
+                        <label for="reprogramarMotivo" class="form-label">Motivo de la Reprogramación</label>
+                        <select class="form-select" id="reprogramarMotivo" required>
+                            <option value="" disabled selected>Seleccione un motivo...</option>
+                            <option value="PEC">PEC</option>
+                            <option value="PT Fuera de plazo">PT Fuera de plazo</option>
+                            <option value="Permisos">Falta o retraso de permisos</option>
+                            <option value="Despacho">Problemas de despacho o logística</option>
+                            <option value="Condiciones Climáticas">Condiciones climáticas</option>
+                            <option value="Solicitud del Cliente">Solicitud del Cliente</option>
+                            <option value="Otro">Otro (especificar en notas)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="reprogramarNotas" class="form-label">Notas Adicionales</label>
+                        <textarea class="form-control" id="reprogramarNotas" rows="3" placeholder="Si seleccionó 'Otro', por favor detalle aquí..."></textarea>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btn-confirmar-reprogramacion">Confirmar y Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

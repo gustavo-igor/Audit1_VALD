@@ -1,0 +1,85 @@
+<div class="modal fade" id="eventoModal" tabindex="-1" aria-labelledby="eventoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="eventoModalLabel">Crear Nuevo Evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="eventoForm">
+                    <input type="hidden" id="eventoId">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="eventoProyecto" class="form-label">Proyecto SAP</label>
+                            <select class="form-select" id="eventoProyecto" style="width: 100%;" required></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoTipo" class="form-label">Tipo de Evento</label>
+                            <select class="form-select" id="eventoTipo" required>
+                                <option value="" disabled selected>Seleccione un tipo...</option>
+                                <option value="Desconexion">Desconexión</option>
+                                <option value="Faenas previas">Faenas previas</option>
+                                <option value="Visita a terreno">Visita a terreno</option>
+                                <option value="Puesta en servicio">Puesta en servicio</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoEstado" class="form-label">Estado del Evento</label>
+                            <select class="form-select" id="eventoEstado" required>
+                                <option value="Programado">Programado</option>
+                                <option value="Reprogramado">Reprogramado</option>
+                                <option value="Ejecucion">En Ejecución</option>
+                                <option value="Terminado">Terminado</option>
+                                <option value="No ejecutado">No ejecutado</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoInicio" class="form-label">Fecha de Inicio</label>
+                            <input type="date" class="form-control" id="eventoInicio" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoFin" class="form-label">Fecha de Fin</label>
+                            <input type="date" class="form-control" id="eventoFin" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoCoordinador" class="form-label">Coordinador</label>
+                            <select class="form-select" id="eventoCoordinador"></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoContratista" class="form-label">Contratista</label>
+                            <select class="form-select" id="eventoContratista" multiple="multiple"></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoBrigadas" class="form-label">Brigadas Asignadas</label>
+                            <select class="form-select" id="eventoBrigadas" multiple style="width: 100%;"></select>
+                        </div>
+                        <div class="col-12">
+                            <hr class="my-3">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoPermisoTrabajo" class="form-label">Tipo de Permiso</label>
+                            <select class="form-select" id="eventoPermisoTrabajo" style="width: 100%;">
+                                <option value="">Sin permiso asociado</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="eventoPermisoTrabajoNumero" class="form-label">N° Permiso de Trabajo</label>
+                            <input type="text" class="form-control" id="eventoPermisoTrabajoNumero" placeholder="Ingrese el número del permiso...">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="eventoNotas" class="form-label">Notas / Descripción</label>
+                            <textarea class="form-control" id="eventoNotas" rows="3"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger me-auto" id="btn-eliminar-evento" style="display: none;">Eliminar</button>
+                <button type="button" class="btn btn-primary" id="btn-guardar-evento">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
